@@ -13,7 +13,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
     return const [
       BarangayModel(
         name: 'Balangobong',
-        coordinates: LatLng(16.0525, 120.5750),
+        coordinates: LatLng(16.0147, 120.5996),
         riskLevel: 'Low',
         temperature: 31.2,
         population: 2450,
@@ -24,7 +24,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Bued',
-        coordinates: LatLng(16.0651, 120.5854),
+        coordinates: LatLng(16.0398, 120.5848),
         riskLevel: 'High',
         temperature: 32.5,
         population: 4120,
@@ -35,7 +35,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Bugayong',
-        coordinates: LatLng(16.0423, 120.5951),
+        coordinates: LatLng(16.0825, 120.5814),
         riskLevel: 'Medium',
         temperature: 30.8,
         population: 1890,
@@ -46,7 +46,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Camangaan',
-        coordinates: LatLng(16.0256, 120.5702),
+        coordinates: LatLng(16.0873, 120.5915),
         riskLevel: 'Low',
         temperature: 31.0,
         population: 1650,
@@ -57,7 +57,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Canarvacanan',
-        coordinates: LatLng(16.0752, 120.6105),
+        coordinates: LatLng(16.0523, 120.5876),
         riskLevel: 'Medium',
         temperature: 29.5,
         population: 2210,
@@ -68,7 +68,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Capas',
-        coordinates: LatLng(16.0381, 120.5684),
+        coordinates: LatLng(16.0586, 120.6171),
         riskLevel: 'High',
         temperature: 33.1,
         population: 3580,
@@ -79,7 +79,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Cili',
-        coordinates: LatLng(16.0584, 120.6201),
+        coordinates: LatLng(16.0708, 120.5892),
         riskLevel: 'Low',
         temperature: 30.2,
         population: 1320,
@@ -90,7 +90,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Dumayat',
-        coordinates: LatLng(16.0212, 120.6053),
+        coordinates: LatLng(16.0644, 120.5752),
         riskLevel: 'Medium',
         temperature: 31.7,
         population: 2780,
@@ -101,7 +101,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Linmansangan',
-        coordinates: LatLng(16.0482, 120.5801),
+        coordinates: LatLng(16.0483, 120.5731),
         riskLevel: 'Low',
         temperature: 32.0,
         population: 1940,
@@ -112,7 +112,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Mangcasuy',
-        coordinates: LatLng(16.0315, 120.6152),
+        coordinates: LatLng(16.0695, 120.6124),
         riskLevel: 'High',
         temperature: 32.8,
         population: 3150,
@@ -123,7 +123,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Moreno',
-        coordinates: LatLng(16.0683, 120.6004),
+        coordinates: LatLng(16.0834, 120.5971),
         riskLevel: 'Low',
         temperature: 31.1,
         population: 1480,
@@ -134,7 +134,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Pasileng Norte',
-        coordinates: LatLng(16.0791, 120.5902),
+        coordinates: LatLng(16.0347, 120.6019),
         riskLevel: 'Medium',
         temperature: 30.5,
         population: 2350,
@@ -145,7 +145,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Pasileng Sur',
-        coordinates: LatLng(16.0724, 120.5928),
+        coordinates: LatLng(16.0322, 120.6111),
         riskLevel: 'Medium',
         temperature: 30.9,
         population: 2180,
@@ -156,7 +156,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Poblacion',
-        coordinates: LatLng(16.0345, 120.5830),
+        coordinates: LatLng(16.0436, 120.5922),
         riskLevel: 'Low',
         temperature: 31.5,
         population: 5620,
@@ -167,7 +167,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'San Felipe Central',
-        coordinates: LatLng(16.0451, 120.6254),
+        coordinates: LatLng(16.0458, 120.6300),
         riskLevel: 'High',
         temperature: 33.4,
         population: 3890,
@@ -178,7 +178,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'San Felipe Sur',
-        coordinates: LatLng(16.0402, 120.6281),
+        coordinates: LatLng(16.0425, 120.6111),
         riskLevel: 'High',
         temperature: 33.2,
         population: 2960,
@@ -189,7 +189,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'San Pablo',
-        coordinates: LatLng(16.0505, 120.6059),
+        coordinates: LatLng(16.0167, 120.6047),
         riskLevel: 'Low',
         temperature: 31.4,
         population: 2080,
@@ -200,7 +200,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Santa Catalina',
-        coordinates: LatLng(16.0302, 120.5982),
+        coordinates: LatLng(16.0836, 120.6119),
         riskLevel: 'Medium',
         temperature: 31.9,
         population: 2540,
@@ -211,7 +211,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Santa Maria Norte',
-        coordinates: LatLng(16.0604, 120.5721),
+        coordinates: LatLng(16.0613, 120.5895),
         riskLevel: 'Low',
         temperature: 30.6,
         population: 1750,
@@ -222,7 +222,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Santiago',
-        coordinates: LatLng(16.0221, 120.5884),
+        coordinates: LatLng(16.0365, 120.5700),
         riskLevel: 'Medium',
         temperature: 32.1,
         population: 2890,
@@ -233,7 +233,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Sto. Niño',
-        coordinates: LatLng(16.0553, 120.5981),
+        coordinates: LatLng(16.0536, 120.5914),
         riskLevel: 'Low',
         temperature: 31.3,
         population: 1560,
@@ -244,7 +244,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Sumabnit',
-        coordinates: LatLng(16.0284, 120.5782),
+        coordinates: LatLng(16.0215, 120.5806),
         riskLevel: 'High',
         temperature: 32.7,
         population: 3320,
@@ -255,7 +255,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Tabuyoc',
-        coordinates: LatLng(16.0621, 120.6125),
+        coordinates: LatLng(16.0120, 120.5882),
         riskLevel: 'Medium',
         temperature: 31.0,
         population: 1980,
@@ -266,7 +266,7 @@ class BarangayLocalDataSourceImpl implements BarangayLocalDataSource {
       ),
       BarangayModel(
         name: 'Vacante',
-        coordinates: LatLng(16.0462, 120.5661),
+        coordinates: LatLng(16.0773, 120.5698),
         riskLevel: 'Low',
         temperature: 31.8,
         population: 1420,

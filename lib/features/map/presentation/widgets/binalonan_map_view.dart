@@ -34,7 +34,7 @@ class BinalonanMapView extends ConsumerWidget {
     return FlutterMap(
       mapController: mapController,
       options: MapOptions(
-        initialCenter: const LatLng(16.001363, 120.602654),
+        initialCenter: const LatLng(16.0500, 120.5950),
         initialZoom: 12.0,
         minZoom: 10.0,
         maxZoom: 18.0,

@@ -101,7 +101,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                       size: 20,
                     ),
                     onPressed: () {
-                      _mapController.move(const LatLng(16.034595, 120.583019), 13.5);
+                      _mapController.move(const LatLng(16.0500, 120.5950), 13.5);
                     },
                   ),
                 ),
