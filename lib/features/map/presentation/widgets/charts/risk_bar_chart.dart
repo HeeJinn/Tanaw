@@ -22,7 +22,7 @@ class RiskBarChart extends StatelessWidget {
               enabled: true,
               touchTooltipData: BarTouchTooltipData(
                 getTooltipColor: (_) => RiskColors.surfaceDarkMid,
-                tooltipRoundedRadius: 8,
+                tooltipBorderRadius: BorderRadius.circular(8),
                 tooltipPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 getTooltipItem: (group, groupIndex, rod, rodIndex) {
                   final labels = ['Flood', 'Earthquake', 'Heat'];

@@ -61,11 +61,13 @@ class BinalonanMapView extends ConsumerWidget {
           markers: filteredBarangays.map((barangay) {
             final isSelected = selectedBarangay?.name == barangay.name;
             final isHovered = ref.watch(hoveredBarangayProvider)?.name == barangay.name;
+            final double markerWidth = isHovered ? 210 : (isSelected ? 180 : 70);
+            final double markerHeight = isHovered ? 150 : (isSelected ? 70 : 70);
 
             return Marker(
               point: barangay.coordinates,
-              width: isHovered ? 210 : (isSelected ? 180 : 70),
-              height: isHovered ? 150 : 70,
+              width: markerWidth,
+              height: markerHeight,
               alignment: Alignment.bottomCenter,
               child: MouseRegion(
                 onEnter: (_) => ref.read(hoveredBarangayProvider.notifier).hover(barangay),
@@ -85,15 +87,20 @@ class BinalonanMapView extends ConsumerWidget {
                       // Pin & Pulse circle
                       Positioned(
                         bottom: 0,
-                        child: Stack(
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.none,
+                        left: 0,
+                        right: 0,
+                        child: Center(
+                          child: Stack(
+                            alignment: Alignment.bottomCenter,
+                            clipBehavior: Clip.none,
                           children: [
                             if (isSelected || isHovered)
-                              AnimatedContainer(
-                                duration: const Duration(milliseconds: 300),
-                                width: 56,
-                                height: 56,
+                              Positioned(
+                                bottom: -14, // Centers the 56x56 pulse circle behind the 28x28 pin
+                                child: AnimatedContainer(
+                                  duration: const Duration(milliseconds: 300),
+                                  width: 56,
+                                  height: 56,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: barangay.riskColor.withValues(alpha: 0.15),
@@ -102,6 +109,7 @@ class BinalonanMapView extends ConsumerWidget {
                                     width: 1,
                                   ),
                                 ),
+                              ),
                               ),
                             AnimatedContainer(
                               duration: const Duration(milliseconds: 200),
@@ -171,11 +179,15 @@ class BinalonanMapView extends ConsumerWidget {
                           ],
                         ),
                       ),
+                      ),
                       // Hover Metadata Card
                       if (isHovered)
                         Positioned(
                           bottom: 56,
-                          child: ClipRRect(
+                          left: 0,
+                          right: 0,
+                          child: Center(
+                            child: ClipRRect(
                             borderRadius: BorderRadius.circular(14),
                             child: BackdropFilter(
                               filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
@@ -259,6 +271,7 @@ class BinalonanMapView extends ConsumerWidget {
                                 ),
                               ),
                             ),
+                          ),
                           ),
                         ),
                     ],

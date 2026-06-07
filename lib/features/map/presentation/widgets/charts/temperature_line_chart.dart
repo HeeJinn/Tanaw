@@ -27,7 +27,7 @@ class TemperatureLineChart extends StatelessWidget {
               enabled: true,
               touchTooltipData: LineTouchTooltipData(
                 getTooltipColor: (_) => RiskColors.surfaceDarkMid,
-                tooltipRoundedRadius: 8,
+                tooltipBorderRadius: BorderRadius.circular(8),
                 tooltipPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 getTooltipItems: (touchedSpots) {
                   return touchedSpots.map((spot) {
