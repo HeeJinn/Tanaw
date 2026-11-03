@@ -61,8 +61,13 @@ String _$dashboardRepositoryHash() =>
 final dashboardStatsProvider = DashboardStatsProvider._();
 
 final class DashboardStatsProvider
-    extends $FunctionalProvider<DashboardStats, DashboardStats, DashboardStats>
-    with $Provider<DashboardStats> {
+    extends
+        $FunctionalProvider<
+          AsyncValue<DashboardStats>,
+          AsyncValue<DashboardStats>,
+          AsyncValue<DashboardStats>
+        >
+    with $Provider<AsyncValue<DashboardStats>> {
   DashboardStatsProvider._()
     : super(
         from: null,
@@ -79,21 +84,22 @@ final class DashboardStatsProvider
 
   @$internal
   @override
-  $ProviderElement<DashboardStats> $createElement($ProviderPointer pointer) =>
-      $ProviderElement(pointer);
+  $ProviderElement<AsyncValue<DashboardStats>> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
 
   @override
-  DashboardStats create(Ref ref) {
+  AsyncValue<DashboardStats> create(Ref ref) {
     return dashboardStats(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(DashboardStats value) {
+  Override overrideWithValue(AsyncValue<DashboardStats> value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<DashboardStats>(value),
+      providerOverride: $SyncValueProvider<AsyncValue<DashboardStats>>(value),
     );
   }
 }
 
-String _$dashboardStatsHash() => r'9ebd5c7fdae6716ef73931bdb028cf9317c66f43';
+String _$dashboardStatsHash() => r'1950f0702516ae6b8bd5635c037938237a942cb9';

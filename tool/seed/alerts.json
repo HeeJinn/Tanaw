@@ -1,0 +1,65 @@
+[
+  {
+    "id": "alert_001",
+    "title": "Flood Warning — Bued River Basin",
+    "description": "Water levels in Bued have risen to critical levels. Residents in low-lying areas should prepare for possible evacuation. Continuous heavy rainfall expected in the next 12 hours.",
+    "severity": "High",
+    "type": "flood",
+    "barangayName": "Bued",
+    "minutesAgo": 15
+  },
+  {
+    "id": "alert_002",
+    "title": "Extreme Heat Index — San Felipe Central",
+    "description": "Heat index has reached 42°C. Outdoor activities should be limited. Drink plenty of water and stay in shaded areas. Vulnerable populations should remain indoors.",
+    "severity": "High",
+    "type": "heat",
+    "barangayName": "San Felipe Central",
+    "minutesAgo": 60
+  },
+  {
+    "id": "alert_004",
+    "title": "Flash Flood Risk — Sumabnit Area",
+    "description": "Soil saturation levels are high after 3 consecutive days of rain. Flash flooding is possible in Sumabnit and adjacent barangays during heavy downpour.",
+    "severity": "High",
+    "type": "flood",
+    "barangayName": "Sumabnit",
+    "minutesAgo": 180
+  },
+  {
+    "id": "alert_005",
+    "title": "Heat Advisory — San Felipe Sur",
+    "description": "Temperatures are expected to remain above 33°C for the next 48 hours. Ensure adequate hydration and limit strenuous outdoor work between 10AM–3PM.",
+    "severity": "Medium",
+    "type": "heat",
+    "barangayName": "San Felipe Sur",
+    "minutesAgo": 300
+  },
+  {
+    "id": "alert_006",
+    "title": "Flood Watch Lifted — Mangcasuy",
+    "description": "Water levels have receded to normal. The flood watch for Mangcasuy has been lifted. Continue monitoring weather updates.",
+    "severity": "Low",
+    "type": "flood",
+    "barangayName": "Mangcasuy",
+    "minutesAgo": 480
+  },
+  {
+    "id": "alert_008",
+    "title": "Rising Water Levels — Santiago",
+    "description": "Moderate rainfall has caused water levels in Santiago to rise. Situation is being monitored closely. No evacuation required at this time.",
+    "severity": "Medium",
+    "type": "flood",
+    "barangayName": "Santiago",
+    "minutesAgo": 960
+  },
+  {
+    "id": "alert_009",
+    "title": "Temperature Spike — Capas",
+    "description": "Temperature in Capas has exceeded 33°C, crossing the danger threshold. Elderly and children should avoid prolonged sun exposure.",
+    "severity": "Medium",
+    "type": "heat",
+    "barangayName": "Capas",
+    "minutesAgo": 1440
+  }
+]

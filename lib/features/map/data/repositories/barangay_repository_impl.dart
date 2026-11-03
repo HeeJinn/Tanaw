@@ -1,16 +1,16 @@
 import 'package:b_risk/features/map/domain/entities/barangay.dart';
 import 'package:b_risk/features/map/domain/repositories/barangay_repository.dart';
-import 'package:b_risk/features/map/data/datasources/barangay_local_data_source.dart';
+import 'package:b_risk/features/map/data/datasources/barangay_remote_data_source.dart';
 
 class BarangayRepositoryImpl implements BarangayRepository {
-  final BarangayLocalDataSource localDataSource;
+  final BarangayRemoteDataSource remoteDataSource;
 
   const BarangayRepositoryImpl({
-    required this.localDataSource,
+    required this.remoteDataSource,
   });
 
   @override
-  List<Barangay> getBarangays() {
-    return localDataSource.getBarangays();
+  Stream<List<Barangay>> watchBarangays() {
+    return remoteDataSource.watchBarangays();
   }
 }

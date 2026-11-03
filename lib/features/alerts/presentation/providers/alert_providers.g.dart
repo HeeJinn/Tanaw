@@ -9,54 +9,6 @@ part of 'alert_providers.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(alertLocalDataSource)
-final alertLocalDataSourceProvider = AlertLocalDataSourceProvider._();
-
-final class AlertLocalDataSourceProvider
-    extends
-        $FunctionalProvider<
-          AlertLocalDataSource,
-          AlertLocalDataSource,
-          AlertLocalDataSource
-        >
-    with $Provider<AlertLocalDataSource> {
-  AlertLocalDataSourceProvider._()
-    : super(
-        from: null,
-        argument: null,
-        retry: null,
-        name: r'alertLocalDataSourceProvider',
-        isAutoDispose: true,
-        dependencies: null,
-        $allTransitiveDependencies: null,
-      );
-
-  @override
-  String debugGetCreateSourceHash() => _$alertLocalDataSourceHash();
-
-  @$internal
-  @override
-  $ProviderElement<AlertLocalDataSource> $createElement(
-    $ProviderPointer pointer,
-  ) => $ProviderElement(pointer);
-
-  @override
-  AlertLocalDataSource create(Ref ref) {
-    return alertLocalDataSource(ref);
-  }
-
-  /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(AlertLocalDataSource value) {
-    return $ProviderOverride(
-      origin: this,
-      providerOverride: $SyncValueProvider<AlertLocalDataSource>(value),
-    );
-  }
-}
-
-String _$alertLocalDataSourceHash() =>
-    r'363fb07e2ff02acfa18e81089eacee7de3c94a49';
-
 @ProviderFor(alertRepository)
 final alertRepositoryProvider = AlertRepositoryProvider._();
 
@@ -97,13 +49,107 @@ final class AlertRepositoryProvider
   }
 }
 
-String _$alertRepositoryHash() => r'd11c270bbd74916baaad73efff6ed416834145aa';
+String _$alertRepositoryHash() => r'04b93d70a13f4432a9e6165b8a8fe6368cfbafd1';
 
-@ProviderFor(AlertList)
+@ProviderFor(alerts)
+final alertsProvider = AlertsProvider._();
+
+final class AlertsProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<Alert>>,
+          List<Alert>,
+          Stream<List<Alert>>
+        >
+    with $FutureModifier<List<Alert>>, $StreamProvider<List<Alert>> {
+  AlertsProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'alertsProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$alertsHash();
+
+  @$internal
+  @override
+  $StreamProviderElement<List<Alert>> $createElement(
+    $ProviderPointer pointer,
+  ) => $StreamProviderElement(pointer);
+
+  @override
+  Stream<List<Alert>> create(Ref ref) {
+    return alerts(ref);
+  }
+}
+
+String _$alertsHash() => r'dc96b19c5f060ea13d29fe15925edf86cb882a71';
+
+@ProviderFor(ReadAlertIds)
+final readAlertIdsProvider = ReadAlertIdsProvider._();
+
+final class ReadAlertIdsProvider
+    extends $AsyncNotifierProvider<ReadAlertIds, Set<String>> {
+  ReadAlertIdsProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'readAlertIdsProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$readAlertIdsHash();
+
+  @$internal
+  @override
+  ReadAlertIds create() => ReadAlertIds();
+}
+
+String _$readAlertIdsHash() => r'83f2d1cec11da48131055e684b91f1aaf87cb594';
+
+abstract class _$ReadAlertIds extends $AsyncNotifier<Set<String>> {
+  FutureOr<Set<String>> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<AsyncValue<Set<String>>, Set<String>>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<Set<String>>, Set<String>>,
+              AsyncValue<Set<String>>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}
+
+/// Alerts from the server, flagged with this device's read state.
+
+@ProviderFor(alertList)
 final alertListProvider = AlertListProvider._();
 
+/// Alerts from the server, flagged with this device's read state.
+
 final class AlertListProvider
-    extends $NotifierProvider<AlertList, List<Alert>> {
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<Alert>>,
+          AsyncValue<List<Alert>>,
+          AsyncValue<List<Alert>>
+        >
+    with $Provider<AsyncValue<List<Alert>>> {
+  /// Alerts from the server, flagged with this device's read state.
   AlertListProvider._()
     : super(
         from: null,
@@ -120,36 +166,25 @@ final class AlertListProvider
 
   @$internal
   @override
-  AlertList create() => AlertList();
+  $ProviderElement<AsyncValue<List<Alert>>> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  AsyncValue<List<Alert>> create(Ref ref) {
+    return alertList(ref);
+  }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(List<Alert> value) {
+  Override overrideWithValue(AsyncValue<List<Alert>> value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<List<Alert>>(value),
+      providerOverride: $SyncValueProvider<AsyncValue<List<Alert>>>(value),
     );
   }
 }
 
-String _$alertListHash() => r'25cbbe64fdd1e864bc5ecd82345b45939e408f5d';
-
-abstract class _$AlertList extends $Notifier<List<Alert>> {
-  List<Alert> build();
-  @$mustCallSuper
-  @override
-  void runBuild() {
-    final ref = this.ref as $Ref<List<Alert>, List<Alert>>;
-    final element =
-        ref.element
-            as $ClassProviderElement<
-              AnyNotifier<List<Alert>, List<Alert>>,
-              List<Alert>,
-              Object?,
-              Object?
-            >;
-    element.handleCreate(ref, build);
-  }
-}
+String _$alertListHash() => r'023d0b84885b4636d45855f0965498776885d3d2';
 
 @ProviderFor(unreadAlertsCount)
 final unreadAlertsCountProvider = UnreadAlertsCountProvider._();
@@ -189,7 +224,7 @@ final class UnreadAlertsCountProvider extends $FunctionalProvider<int, int, int>
   }
 }
 
-String _$unreadAlertsCountHash() => r'704af22db2ec1055875e4af1c1b8564a70211a7e';
+String _$unreadAlertsCountHash() => r'3d8fdfdae196627c4b1c5ca1abb64486d4775c99';
 
 @ProviderFor(AlertTypeFilter)
 final alertTypeFilterProvider = AlertTypeFilterProvider._();
@@ -247,8 +282,13 @@ abstract class _$AlertTypeFilter extends $Notifier<String> {
 final filteredAlertsProvider = FilteredAlertsProvider._();
 
 final class FilteredAlertsProvider
-    extends $FunctionalProvider<List<Alert>, List<Alert>, List<Alert>>
-    with $Provider<List<Alert>> {
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<Alert>>,
+          AsyncValue<List<Alert>>,
+          AsyncValue<List<Alert>>
+        >
+    with $Provider<AsyncValue<List<Alert>>> {
   FilteredAlertsProvider._()
     : super(
         from: null,
@@ -265,21 +305,22 @@ final class FilteredAlertsProvider
 
   @$internal
   @override
-  $ProviderElement<List<Alert>> $createElement($ProviderPointer pointer) =>
-      $ProviderElement(pointer);
+  $ProviderElement<AsyncValue<List<Alert>>> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
 
   @override
-  List<Alert> create(Ref ref) {
+  AsyncValue<List<Alert>> create(Ref ref) {
     return filteredAlerts(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(List<Alert> value) {
+  Override overrideWithValue(AsyncValue<List<Alert>> value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<List<Alert>>(value),
+      providerOverride: $SyncValueProvider<AsyncValue<List<Alert>>>(value),
     );
   }
 }
 
-String _$filteredAlertsHash() => r'b97ee8887d9566c72f03a57908d9d4466e58529f';
+String _$filteredAlertsHash() => r'd440f3b6dd06765a0fb8aeaf4c1689dad010f37e';

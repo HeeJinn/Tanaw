@@ -17,6 +17,7 @@ class _RiskPieChartState extends State<RiskPieChart> {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     final highCount = widget.barangays.where((b) => b.riskLevel == 'High').length;
     final mediumCount = widget.barangays.where((b) => b.riskLevel == 'Medium').length;
     final lowCount = widget.barangays.where((b) => b.riskLevel == 'Low').length;
@@ -66,13 +67,13 @@ class _RiskPieChartState extends State<RiskPieChart> {
                   '$total',
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                         fontWeight: FontWeight.w800,
-                        color: RiskColors.textPrimaryLight,
+                        color: scheme.onSurface,
                       ),
                 ),
                 Text(
                   'Total Areas',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: RiskColors.textSecondaryLight,
+                        color: scheme.onSurfaceVariant,
                       ),
                 ),
                 const SizedBox(height: 16),
@@ -143,6 +144,7 @@ class _RiskPieChartState extends State<RiskPieChart> {
 
   Widget _buildLegendItem(
       BuildContext context, String label, int count, Color color) {
+    final scheme = Theme.of(context).colorScheme;
     return Row(
       children: [
         Container(
@@ -158,7 +160,7 @@ class _RiskPieChartState extends State<RiskPieChart> {
           child: Text(
             label,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: RiskColors.textSecondaryLight,
+                  color: scheme.onSurfaceVariant,
                   fontWeight: FontWeight.w500,
                 ),
           ),
@@ -167,7 +169,7 @@ class _RiskPieChartState extends State<RiskPieChart> {
           '$count',
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: RiskColors.textPrimaryLight,
+                color: scheme.onSurface,
               ),
         ),
       ],

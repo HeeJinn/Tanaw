@@ -1,16 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:b_risk/core/router/router.dart';
 import 'package:b_risk/core/theme/app_theme.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  await [
-    Permission.location,
-    Permission.notification,
-  ].request();
+  // Android reads its config from android/app/google-services.json.
+  await Firebase.initializeApp();
 
   runApp(
     const ProviderScope(
@@ -30,7 +27,7 @@ class MyApp extends ConsumerWidget {
       title: 'Tanaw',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       routerConfig: router,
       debugShowCheckedModeBanner: false,
     );

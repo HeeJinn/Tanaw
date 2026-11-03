@@ -1,0 +1,434 @@
+[
+  {
+    "name": "Balangobong",
+    "lat": 16.0147,
+    "lng": 120.5996,
+    "riskLevel": "Low",
+    "temperature": 31.2,
+    "population": 2450,
+    "floodRisk": 0.15,
+    "heatRisk": 0.3,
+    "historicalTemperatures": [
+      29.8,
+      30.1,
+      31,
+      31.5,
+      31.2,
+      30.8
+    ]
+  },
+  {
+    "name": "Bued",
+    "lat": 16.0398,
+    "lng": 120.5848,
+    "riskLevel": "High",
+    "temperature": 32.5,
+    "population": 4120,
+    "floodRisk": 0.85,
+    "heatRisk": 0.6,
+    "historicalTemperatures": [
+      30.5,
+      31.2,
+      32,
+      32.8,
+      32.5,
+      31.9
+    ]
+  },
+  {
+    "name": "Bugayong",
+    "lat": 16.0825,
+    "lng": 120.5814,
+    "riskLevel": "Medium",
+    "temperature": 30.8,
+    "population": 1890,
+    "floodRisk": 0.45,
+    "heatRisk": 0.35,
+    "historicalTemperatures": [
+      29.5,
+      30,
+      30.5,
+      31,
+      30.8,
+      30.3
+    ]
+  },
+  {
+    "name": "Camangaan",
+    "lat": 16.0873,
+    "lng": 120.5915,
+    "riskLevel": "Low",
+    "temperature": 31,
+    "population": 1650,
+    "floodRisk": 0.1,
+    "heatRisk": 0.28,
+    "historicalTemperatures": [
+      29.7,
+      30.2,
+      30.8,
+      31.2,
+      31,
+      30.5
+    ]
+  },
+  {
+    "name": "Canarvacanan",
+    "lat": 16.0523,
+    "lng": 120.5876,
+    "riskLevel": "Medium",
+    "temperature": 29.5,
+    "population": 2210,
+    "floodRisk": 0.55,
+    "heatRisk": 0.25,
+    "historicalTemperatures": [
+      28.2,
+      28.8,
+      29.2,
+      29.7,
+      29.5,
+      29
+    ]
+  },
+  {
+    "name": "Capas",
+    "lat": 16.0586,
+    "lng": 120.6171,
+    "riskLevel": "High",
+    "temperature": 33.1,
+    "population": 3580,
+    "floodRisk": 0.7,
+    "heatRisk": 0.9,
+    "historicalTemperatures": [
+      31.5,
+      32,
+      32.8,
+      33.4,
+      33.1,
+      32.6
+    ]
+  },
+  {
+    "name": "Cili",
+    "lat": 16.0708,
+    "lng": 120.5892,
+    "riskLevel": "Low",
+    "temperature": 30.2,
+    "population": 1320,
+    "floodRisk": 0.12,
+    "heatRisk": 0.22,
+    "historicalTemperatures": [
+      28.9,
+      29.4,
+      29.9,
+      30.5,
+      30.2,
+      29.7
+    ]
+  },
+  {
+    "name": "Dumayat",
+    "lat": 16.0644,
+    "lng": 120.5752,
+    "riskLevel": "Medium",
+    "temperature": 31.7,
+    "population": 2780,
+    "floodRisk": 0.5,
+    "heatRisk": 0.45,
+    "historicalTemperatures": [
+      30.2,
+      30.8,
+      31.3,
+      31.9,
+      31.7,
+      31.1
+    ]
+  },
+  {
+    "name": "Linmansangan",
+    "lat": 16.0483,
+    "lng": 120.5731,
+    "riskLevel": "Low",
+    "temperature": 32,
+    "population": 1940,
+    "floodRisk": 0.18,
+    "heatRisk": 0.35,
+    "historicalTemperatures": [
+      30.5,
+      31,
+      31.6,
+      32.2,
+      32,
+      31.4
+    ]
+  },
+  {
+    "name": "Mangcasuy",
+    "lat": 16.0695,
+    "lng": 120.6124,
+    "riskLevel": "High",
+    "temperature": 32.8,
+    "population": 3150,
+    "floodRisk": 0.75,
+    "heatRisk": 0.72,
+    "historicalTemperatures": [
+      31,
+      31.6,
+      32.3,
+      33,
+      32.8,
+      32.2
+    ]
+  },
+  {
+    "name": "Moreno",
+    "lat": 16.0834,
+    "lng": 120.5971,
+    "riskLevel": "Low",
+    "temperature": 31.1,
+    "population": 1480,
+    "floodRisk": 0.14,
+    "heatRisk": 0.26,
+    "historicalTemperatures": [
+      29.6,
+      30.1,
+      30.7,
+      31.3,
+      31.1,
+      30.6
+    ]
+  },
+  {
+    "name": "Pasileng Norte",
+    "lat": 16.0347,
+    "lng": 120.6019,
+    "riskLevel": "Medium",
+    "temperature": 30.5,
+    "population": 2350,
+    "floodRisk": 0.48,
+    "heatRisk": 0.3,
+    "historicalTemperatures": [
+      29.2,
+      29.7,
+      30.2,
+      30.8,
+      30.5,
+      30
+    ]
+  },
+  {
+    "name": "Pasileng Sur",
+    "lat": 16.0322,
+    "lng": 120.6111,
+    "riskLevel": "Medium",
+    "temperature": 30.9,
+    "population": 2180,
+    "floodRisk": 0.52,
+    "heatRisk": 0.33,
+    "historicalTemperatures": [
+      29.5,
+      30,
+      30.5,
+      31.1,
+      30.9,
+      30.4
+    ]
+  },
+  {
+    "name": "Poblacion",
+    "lat": 16.0436,
+    "lng": 120.5922,
+    "riskLevel": "Low",
+    "temperature": 31.5,
+    "population": 5620,
+    "floodRisk": 0.2,
+    "heatRisk": 0.32,
+    "historicalTemperatures": [
+      30,
+      30.6,
+      31.1,
+      31.7,
+      31.5,
+      31
+    ]
+  },
+  {
+    "name": "San Felipe Central",
+    "lat": 16.0458,
+    "lng": 120.63,
+    "riskLevel": "High",
+    "temperature": 33.4,
+    "population": 3890,
+    "floodRisk": 0.8,
+    "heatRisk": 0.92,
+    "historicalTemperatures": [
+      31.8,
+      32.3,
+      33,
+      33.6,
+      33.4,
+      32.8
+    ]
+  },
+  {
+    "name": "San Felipe Sur",
+    "lat": 16.0425,
+    "lng": 120.6111,
+    "riskLevel": "High",
+    "temperature": 33.2,
+    "population": 2960,
+    "floodRisk": 0.78,
+    "heatRisk": 0.88,
+    "historicalTemperatures": [
+      31.6,
+      32.1,
+      32.8,
+      33.4,
+      33.2,
+      32.7
+    ]
+  },
+  {
+    "name": "San Pablo",
+    "lat": 16.0167,
+    "lng": 120.6047,
+    "riskLevel": "Low",
+    "temperature": 31.4,
+    "population": 2080,
+    "floodRisk": 0.16,
+    "heatRisk": 0.3,
+    "historicalTemperatures": [
+      29.9,
+      30.5,
+      31,
+      31.6,
+      31.4,
+      30.9
+    ]
+  },
+  {
+    "name": "Santa Catalina",
+    "lat": 16.0836,
+    "lng": 120.6119,
+    "riskLevel": "Medium",
+    "temperature": 31.9,
+    "population": 2540,
+    "floodRisk": 0.58,
+    "heatRisk": 0.42,
+    "historicalTemperatures": [
+      30.4,
+      31,
+      31.5,
+      32.1,
+      31.9,
+      31.3
+    ]
+  },
+  {
+    "name": "Santa Maria Norte",
+    "lat": 16.0613,
+    "lng": 120.5895,
+    "riskLevel": "Low",
+    "temperature": 30.6,
+    "population": 1750,
+    "floodRisk": 0.13,
+    "heatRisk": 0.24,
+    "historicalTemperatures": [
+      29.3,
+      29.8,
+      30.3,
+      30.8,
+      30.6,
+      30.1
+    ]
+  },
+  {
+    "name": "Santiago",
+    "lat": 16.0365,
+    "lng": 120.57,
+    "riskLevel": "Medium",
+    "temperature": 32.1,
+    "population": 2890,
+    "floodRisk": 0.62,
+    "heatRisk": 0.48,
+    "historicalTemperatures": [
+      30.6,
+      31.2,
+      31.7,
+      32.3,
+      32.1,
+      31.5
+    ]
+  },
+  {
+    "name": "Sto. Niño",
+    "lat": 16.0536,
+    "lng": 120.5914,
+    "riskLevel": "Low",
+    "temperature": 31.3,
+    "population": 1560,
+    "floodRisk": 0.11,
+    "heatRisk": 0.27,
+    "historicalTemperatures": [
+      29.8,
+      30.3,
+      30.9,
+      31.5,
+      31.3,
+      30.8
+    ]
+  },
+  {
+    "name": "Sumabnit",
+    "lat": 16.0215,
+    "lng": 120.5806,
+    "riskLevel": "High",
+    "temperature": 32.7,
+    "population": 3320,
+    "floodRisk": 0.82,
+    "heatRisk": 0.68,
+    "historicalTemperatures": [
+      31,
+      31.5,
+      32.2,
+      32.9,
+      32.7,
+      32.1
+    ]
+  },
+  {
+    "name": "Tabuyoc",
+    "lat": 16.012,
+    "lng": 120.5882,
+    "riskLevel": "Medium",
+    "temperature": 31,
+    "population": 1980,
+    "floodRisk": 0.46,
+    "heatRisk": 0.36,
+    "historicalTemperatures": [
+      29.6,
+      30.1,
+      30.6,
+      31.2,
+      31,
+      30.5
+    ]
+  },
+  {
+    "name": "Vacante",
+    "lat": 16.0773,
+    "lng": 120.5698,
+    "riskLevel": "Low",
+    "temperature": 31.8,
+    "population": 1420,
+    "floodRisk": 0.17,
+    "heatRisk": 0.31,
+    "historicalTemperatures": [
+      30.3,
+      30.8,
+      31.4,
+      32,
+      31.8,
+      31.2
+    ]
+  }
+]

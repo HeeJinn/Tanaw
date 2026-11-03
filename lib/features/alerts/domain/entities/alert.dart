@@ -3,7 +3,7 @@ class Alert {
   final String title;
   final String description;
   final String severity; // 'High', 'Medium', 'Low'
-  final String type; // 'flood', 'earthquake', 'heat'
+  final String type; // 'flood', 'heat'
   final String barangayName;
   final DateTime timestamp;
   final bool isRead;

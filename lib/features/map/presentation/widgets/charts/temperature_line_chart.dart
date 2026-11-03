@@ -8,12 +8,18 @@ class TemperatureLineChart extends StatelessWidget {
 
   const TemperatureLineChart({super.key, required this.barangay});
 
-  static const _months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+  static const _monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  /// Readings are monthly averages, oldest first, ending with the current month.
+  static String monthLabel(int index, int count, DateTime now) =>
+      _monthNames[(now.month - count + index) % 12];
   static const double _dangerThreshold = 33.0;
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     final temps = barangay.historicalTemperatures;
+    final now = DateTime.now();
     final minTemp = temps.reduce((a, b) => a < b ? a : b) - 1.5;
     final maxTemp = temps.reduce((a, b) => a > b ? a : b) + 1.5;
 
@@ -26,23 +32,23 @@ class TemperatureLineChart extends StatelessWidget {
             lineTouchData: LineTouchData(
               enabled: true,
               touchTooltipData: LineTouchTooltipData(
-                getTooltipColor: (_) => RiskColors.surfaceDarkMid,
+                getTooltipColor: (_) => scheme.inverseSurface,
                 tooltipBorderRadius: BorderRadius.circular(8),
                 tooltipPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 getTooltipItems: (touchedSpots) {
                   return touchedSpots.map((spot) {
                     return LineTooltipItem(
-                      '${_months[spot.x.toInt()]}\n',
-                      const TextStyle(
-                        color: Colors.white70,
+                      '${monthLabel(spot.x.toInt(), temps.length, now)}\n',
+                      TextStyle(
+                        color: scheme.onInverseSurface.withValues(alpha: 0.7),
                         fontWeight: FontWeight.w500,
                         fontSize: 11,
                       ),
                       children: [
                         TextSpan(
                           text: '${spot.y.toStringAsFixed(1)}°C',
-                          style: const TextStyle(
-                            color: Colors.white,
+                          style: TextStyle(
+                            color: scheme.onInverseSurface,
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
                           ),
@@ -66,7 +72,7 @@ class TemperatureLineChart extends StatelessWidget {
                       getDotPainter: (spot, percent, barData, index) {
                         return FlDotCirclePainter(
                           radius: 6,
-                          color: Colors.white,
+                          color: scheme.surface,
                           strokeWidth: 2.5,
                           strokeColor: RiskColors.chartLine,
                         );
@@ -82,7 +88,7 @@ class TemperatureLineChart extends StatelessWidget {
               horizontalInterval: 1,
               getDrawingHorizontalLine: (value) {
                 return FlLine(
-                  color: RiskColors.chartGrid,
+                  color: scheme.outlineVariant,
                   strokeWidth: 0.8,
                   dashArray: [4, 4],
                 );
@@ -98,15 +104,15 @@ class TemperatureLineChart extends StatelessWidget {
                   interval: 1,
                   getTitlesWidget: (value, meta) {
                     final index = value.toInt();
-                    if (index < 0 || index >= _months.length) {
+                    if (index < 0 || index >= temps.length) {
                       return const SizedBox.shrink();
                     }
                     return Padding(
                       padding: const EdgeInsets.only(top: 6),
                       child: Text(
-                        _months[index],
+                        monthLabel(index, temps.length, now),
                         style: TextStyle(
-                          color: RiskColors.textTertiaryLight,
+                          color: scheme.onSurfaceVariant,
                           fontSize: 10,
                           fontWeight: FontWeight.w500,
                         ),
@@ -127,7 +133,7 @@ class TemperatureLineChart extends StatelessWidget {
                     return Text(
                       '${value.toInt()}°',
                       style: TextStyle(
-                        color: RiskColors.textTertiaryLight,
+                        color: scheme.onSurfaceVariant,
                         fontSize: 9,
                         fontWeight: FontWeight.w500,
                       ),
@@ -177,7 +183,7 @@ class TemperatureLineChart extends StatelessWidget {
                   getDotPainter: (spot, percent, barData, index) {
                     return FlDotCirclePainter(
                       radius: 3.5,
-                      color: Colors.white,
+                      color: scheme.surface,
                       strokeWidth: 2,
                       strokeColor: RiskColors.chartLine,
                     );

@@ -10,6 +10,7 @@ class RiskBarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     return SizedBox(
       height: 180,
       child: Padding(
@@ -21,24 +22,24 @@ class RiskBarChart extends StatelessWidget {
             barTouchData: BarTouchData(
               enabled: true,
               touchTooltipData: BarTouchTooltipData(
-                getTooltipColor: (_) => RiskColors.surfaceDarkMid,
+                getTooltipColor: (_) => scheme.inverseSurface,
                 tooltipBorderRadius: BorderRadius.circular(8),
                 tooltipPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 getTooltipItem: (group, groupIndex, rod, rodIndex) {
-                  final labels = ['Flood', 'Earthquake', 'Heat'];
+                  final labels = ['Flood', 'Heat'];
                   final value = rod.toY;
                   return BarTooltipItem(
                     '${labels[group.x]}\n',
-                    const TextStyle(
-                      color: Colors.white70,
+                    TextStyle(
+                      color: scheme.onInverseSurface.withValues(alpha: 0.7),
                       fontWeight: FontWeight.w500,
                       fontSize: 11,
                     ),
                     children: [
                       TextSpan(
                         text: '${(value * 100).toStringAsFixed(0)}%',
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: scheme.onInverseSurface,
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                         ),
@@ -57,30 +58,10 @@ class RiskBarChart extends StatelessWidget {
                   showTitles: true,
                   reservedSize: 32,
                   getTitlesWidget: (value, meta) {
-                    IconData icon;
-                    String label;
-                    Color color;
-                    switch (value.toInt()) {
-                      case 0:
-                        icon = Icons.water_drop_rounded;
-                        label = 'Flood';
-                        color = RiskColors.chartFlood;
-                        break;
-                      case 1:
-                        icon = Icons.vibration;
-                        label = 'Quake';
-                        color = RiskColors.chartEarthquake;
-                        break;
-                      case 2:
-                        icon = Icons.wb_sunny_rounded;
-                        label = 'Heat';
-                        color = RiskColors.chartHeat;
-                        break;
-                      default:
-                        icon = Icons.help;
-                        label = '';
-                        color = Colors.grey;
-                    }
+                    final type = const ['flood', 'heat'][value.toInt()];
+                    final icon = RiskColors.iconForHazard(type);
+                    final label = type == 'flood' ? 'Flood' : 'Heat';
+                    final color = RiskColors.colorForHazard(type);
                     return Padding(
                       padding: const EdgeInsets.only(top: 8),
                       child: Row(
@@ -91,7 +72,7 @@ class RiskBarChart extends StatelessWidget {
                           Text(
                             label,
                             style: TextStyle(
-                              color: RiskColors.textSecondaryLight,
+                              color: scheme.onSurfaceVariant,
                               fontSize: 10,
                               fontWeight: FontWeight.w600,
                             ),
@@ -111,7 +92,7 @@ class RiskBarChart extends StatelessWidget {
                     return Text(
                       '${(value * 100).toInt()}%',
                       style: TextStyle(
-                        color: RiskColors.textTertiaryLight,
+                        color: scheme.onSurfaceVariant,
                         fontSize: 9,
                         fontWeight: FontWeight.w500,
                       ),
@@ -126,7 +107,7 @@ class RiskBarChart extends StatelessWidget {
               horizontalInterval: 0.25,
               getDrawingHorizontalLine: (value) {
                 return FlLine(
-                  color: RiskColors.chartGrid,
+                  color: scheme.outlineVariant,
                   strokeWidth: 1,
                   dashArray: [4, 4],
                 );
@@ -134,9 +115,8 @@ class RiskBarChart extends StatelessWidget {
             ),
             borderData: FlBorderData(show: false),
             barGroups: [
-              _buildBarGroup(0, barangay.floodRisk, RiskColors.chartFlood),
-              _buildBarGroup(1, barangay.earthquakeRisk, RiskColors.chartEarthquake),
-              _buildBarGroup(2, barangay.heatRisk, RiskColors.chartHeat),
+              _buildBarGroup(0, barangay.floodRisk, RiskColors.flood),
+              _buildBarGroup(1, barangay.heatRisk, RiskColors.heat),
             ],
           ),
           duration: const Duration(milliseconds: 500),

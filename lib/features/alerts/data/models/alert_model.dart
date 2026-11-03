@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:b_risk/features/alerts/domain/entities/alert.dart';
 
 class AlertModel extends Alert {
@@ -9,7 +10,6 @@ class AlertModel extends Alert {
     required super.type,
     required super.barangayName,
     required super.timestamp,
-    super.isRead,
   });
 
   factory AlertModel.fromJson(Map<String, dynamic> json) {
@@ -20,21 +20,7 @@ class AlertModel extends Alert {
       severity: json['severity'] as String,
       type: json['type'] as String,
       barangayName: json['barangayName'] as String,
-      timestamp: DateTime.parse(json['timestamp'] as String),
-      isRead: json['isRead'] as bool? ?? false,
+      timestamp: (json['timestamp'] as Timestamp).toDate(),
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'description': description,
-      'severity': severity,
-      'type': type,
-      'barangayName': barangayName,
-      'timestamp': timestamp.toIso8601String(),
-      'isRead': isRead,
-    };
   }
 }

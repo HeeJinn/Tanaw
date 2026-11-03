@@ -29,7 +29,7 @@ class DashboardRepositoryImpl implements DashboardRepository {
                 0.0,
                 (sum, b) =>
                     sum +
-                    (b.floodRisk + b.earthquakeRisk + b.heatRisk) / 3) /
+                    (b.floodRisk + b.heatRisk) / 2) /
             barangays.length;
 
     return DashboardStats(

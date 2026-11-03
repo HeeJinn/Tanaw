@@ -1,0 +1,14 @@
+rules_version = '2';
+
+// TEMPORARY rules for running seed.mjs. Set the expiry a few minutes ahead
+// (epoch milliseconds), deploy, seed, then redeploy ../../firestore.rules at once:
+//   firebase deploy --only firestore:rules --config tool/seed/firebase.json
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{collection}/{id} {
+      allow read: if collection in ['barangays', 'alerts'];
+      allow write: if collection in ['barangays', 'alerts']
+        && request.time < timestamp.value(0);
+    }
+  }
+}

@@ -7,7 +7,6 @@ class Barangay {
   final double temperature;
   final int population;
   final double floodRisk;
-  final double earthquakeRisk;
   final double heatRisk;
   final List<double> historicalTemperatures;
 
@@ -18,7 +17,6 @@ class Barangay {
     required this.temperature,
     required this.population,
     required this.floodRisk,
-    required this.earthquakeRisk,
     required this.heatRisk,
     required this.historicalTemperatures,
   });

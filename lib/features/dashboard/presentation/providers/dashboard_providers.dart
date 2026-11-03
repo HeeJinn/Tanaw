@@ -12,8 +12,7 @@ DashboardRepository dashboardRepository(Ref ref) {
 }
 
 @riverpod
-DashboardStats dashboardStats(Ref ref) {
+AsyncValue<DashboardStats> dashboardStats(Ref ref) {
   final repository = ref.watch(dashboardRepositoryProvider);
-  final barangays = ref.watch(barangaysProvider);
-  return repository.getStats(barangays);
+  return ref.watch(barangaysProvider).whenData(repository.getStats);
 }

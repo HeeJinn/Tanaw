@@ -2,193 +2,63 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:b_risk/core/theme/risk_colors.dart';
 
+/// Material 3 styled toward M3 Expressive: vibrant color, Google Sans Flex with
+/// emphasized weights, and the larger expressive corner radii.
 class AppTheme {
   AppTheme._();
 
-  // ── Light Theme ────────────────────────────────────────────────────
-  static ThemeData get lightTheme {
-    final textTheme = GoogleFonts.interTextTheme(ThemeData.light().textTheme);
+  static ThemeData get lightTheme => build(Brightness.light);
+  static ThemeData get darkTheme => build(Brightness.dark);
 
-    return ThemeData(
-      useMaterial3: true,
-      brightness: Brightness.light,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: RiskColors.primary,
-        brightness: Brightness.light,
-        primary: RiskColors.primary,
-        onPrimary: Colors.white,
-        surface: RiskColors.surfaceLight,
-        onSurface: RiskColors.textPrimaryLight,
-        surfaceContainerHighest: RiskColors.surfaceMid,
-        outline: RiskColors.borderLight,
-      ),
-      scaffoldBackgroundColor: RiskColors.surfaceLight,
-      textTheme: textTheme.copyWith(
-        headlineLarge: textTheme.headlineLarge?.copyWith(
-          fontWeight: FontWeight.w700,
-          color: RiskColors.textPrimaryLight,
-          letterSpacing: -0.5,
-        ),
-        headlineMedium: textTheme.headlineMedium?.copyWith(
-          fontWeight: FontWeight.w700,
-          color: RiskColors.textPrimaryLight,
-          letterSpacing: -0.3,
-        ),
-        titleLarge: textTheme.titleLarge?.copyWith(
-          fontWeight: FontWeight.w600,
-          color: RiskColors.textPrimaryLight,
-        ),
-        titleMedium: textTheme.titleMedium?.copyWith(
-          fontWeight: FontWeight.w600,
-          color: RiskColors.textPrimaryLight,
-        ),
-        bodyLarge: textTheme.bodyLarge?.copyWith(
-          color: RiskColors.textPrimaryLight,
-        ),
-        bodyMedium: textTheme.bodyMedium?.copyWith(
-          color: RiskColors.textSecondaryLight,
-        ),
-        bodySmall: textTheme.bodySmall?.copyWith(
-          color: RiskColors.textTertiaryLight,
-        ),
-        labelLarge: textTheme.labelLarge?.copyWith(
-          fontWeight: FontWeight.w600,
-          letterSpacing: 0.3,
-        ),
-        labelMedium: textTheme.labelMedium?.copyWith(
-          fontWeight: FontWeight.w500,
-        ),
-      ),
-      cardTheme: CardThemeData(
-        elevation: 0,
-        color: RiskColors.cardLight,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: RiskColors.borderLight, width: 1),
-        ),
-        margin: EdgeInsets.zero,
-      ),
-      chipTheme: ChipThemeData(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        side: BorderSide.none,
-        labelStyle: textTheme.labelMedium?.copyWith(
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: RiskColors.cardLight,
-        foregroundColor: RiskColors.primary,
-        elevation: 4,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-      ),
-      dividerTheme: const DividerThemeData(
-        color: RiskColors.borderLight,
-        thickness: 1,
-        space: 1,
-      ),
-      listTileTheme: ListTileThemeData(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-      ),
+  /// Tests pass their own [font]: google_fonts can't download inside flutter test.
+  static ThemeData build(
+    Brightness brightness, {
+    TextTheme Function(TextTheme) font = GoogleFonts.googleSansFlexTextTheme,
+  }) {
+    final scheme = ColorScheme.fromSeed(
+      seedColor: RiskColors.primary,
+      brightness: brightness,
+      dynamicSchemeVariant: DynamicSchemeVariant.tonalSpot,
     );
-  }
+    final base = ThemeData(colorScheme: scheme);
+    final text = font(base.textTheme);
 
-  // ── Dark Theme ─────────────────────────────────────────────────────
-  static ThemeData get darkTheme {
-    final textTheme = GoogleFonts.interTextTheme(ThemeData.dark().textTheme);
-
-    return ThemeData(
-      useMaterial3: true,
-      brightness: Brightness.dark,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: RiskColors.primary,
-        brightness: Brightness.dark,
-        primary: RiskColors.primaryLight,
-        onPrimary: RiskColors.surfaceDark,
-        surface: RiskColors.surfaceDark,
-        onSurface: RiskColors.textPrimaryDark,
-        surfaceContainerHighest: RiskColors.surfaceDarkMid,
-        outline: RiskColors.borderDark,
+    return base.copyWith(
+      textTheme: text.copyWith(
+        displayMedium: text.displayMedium?.copyWith(fontWeight: FontWeight.w800, letterSpacing: -1),
+        displaySmall: text.displaySmall?.copyWith(fontWeight: FontWeight.w800, letterSpacing: -0.5),
+        headlineLarge: text.headlineLarge?.copyWith(fontWeight: FontWeight.w800),
+        headlineMedium: text.headlineMedium?.copyWith(fontWeight: FontWeight.w800),
+        headlineSmall: text.headlineSmall?.copyWith(fontWeight: FontWeight.w700),
+        titleLarge: text.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+        titleMedium: text.titleMedium?.copyWith(fontWeight: FontWeight.w700),
+        titleSmall: text.titleSmall?.copyWith(fontWeight: FontWeight.w700),
+        labelLarge: text.labelLarge?.copyWith(fontWeight: FontWeight.w700),
       ),
-      scaffoldBackgroundColor: RiskColors.surfaceDark,
-      textTheme: textTheme.copyWith(
-        headlineLarge: textTheme.headlineLarge?.copyWith(
-          fontWeight: FontWeight.w700,
-          color: RiskColors.textPrimaryDark,
-          letterSpacing: -0.5,
-        ),
-        headlineMedium: textTheme.headlineMedium?.copyWith(
-          fontWeight: FontWeight.w700,
-          color: RiskColors.textPrimaryDark,
-          letterSpacing: -0.3,
-        ),
-        titleLarge: textTheme.titleLarge?.copyWith(
-          fontWeight: FontWeight.w600,
-          color: RiskColors.textPrimaryDark,
-        ),
-        titleMedium: textTheme.titleMedium?.copyWith(
-          fontWeight: FontWeight.w600,
-          color: RiskColors.textPrimaryDark,
-        ),
-        bodyLarge: textTheme.bodyLarge?.copyWith(
-          color: RiskColors.textPrimaryDark,
-        ),
-        bodyMedium: textTheme.bodyMedium?.copyWith(
-          color: RiskColors.textSecondaryDark,
-        ),
-        bodySmall: textTheme.bodySmall?.copyWith(
-          color: RiskColors.textTertiaryDark,
-        ),
-        labelLarge: textTheme.labelLarge?.copyWith(
-          fontWeight: FontWeight.w600,
-          letterSpacing: 0.3,
-        ),
-        labelMedium: textTheme.labelMedium?.copyWith(
-          fontWeight: FontWeight.w500,
-        ),
-      ),
-      cardTheme: CardThemeData(
+      cardTheme: const CardThemeData(
         elevation: 0,
-        color: RiskColors.cardDark,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: RiskColors.borderDark, width: 1),
-        ),
         margin: EdgeInsets.zero,
-      ),
-      chipTheme: ChipThemeData(
+        clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        side: BorderSide.none,
-        labelStyle: textTheme.labelMedium?.copyWith(
-          fontWeight: FontWeight.w600,
+          borderRadius: BorderRadius.all(Radius.circular(28)),
         ),
       ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: RiskColors.cardDark,
-        foregroundColor: RiskColors.primaryLight,
-        elevation: 4,
+      chipTheme: const ChipThemeData(shape: StadiumBorder()),
+      navigationBarTheme: NavigationBarThemeData(
+        height: 72,
+        backgroundColor: scheme.surfaceContainer,
+        labelTextStyle: WidgetStatePropertyAll(text.labelMedium?.copyWith(fontWeight: FontWeight.w700)),
+      ),
+      bottomSheetTheme: const BottomSheetThemeData(
+        showDragHandle: true,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
         ),
       ),
-      dividerTheme: const DividerThemeData(
-        color: RiskColors.borderDark,
-        thickness: 1,
-        space: 1,
-      ),
-      listTileTheme: ListTileThemeData(
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       ),
     );
   }
